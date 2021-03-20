@@ -112,6 +112,11 @@ body{
     #addItem{
         width: 15%;
     }
+    
+    .list{
+        margin-top: 40px;
+    }
+
 
   }
   
