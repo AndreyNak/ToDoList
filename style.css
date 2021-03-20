@@ -1,0 +1,99 @@
+body{
+    background-color:coral;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+*,
+*:after {
+    box-sizing: border-box;
+}
+
+
+.container{
+    margin: 0 auto;
+    width: 800px;
+}
+
+.list{
+    margin-top: 100px;
+    text-align: center;
+}
+
+.list__title{
+    font-size: 48px;
+}
+
+.list__top {
+    display: flex;
+    justify-content: center;
+}
+
+#input{
+    width: 350px;
+    height: 50px;
+    border: none;
+    outline:none;
+    font-size: 30px;
+}
+
+#addItem{
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-left: 1px solid rgb(225, 229, 233);
+    outline:none;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+    display: inline;
+    background-color: white;
+    
+}
+
+#addItem:hover{
+   background-color: whitesmoke;
+}
+
+
+#addItem:active{
+    background-color:turquoise;
+}
+
+#content{
+    margin-top: 60px;
+}
+
+.list__item{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+.list__text {
+    background: white;
+    color: black;
+    width: 500px;
+    height: 50px;
+    padding: 9px 7px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.list__btn-delete{
+    height: 50px;
+    width: 50px;
+    border: none;
+    
+    outline:none;
+    font-weight: bold;
+    font-size: 30px;
+    margin: 0;
+    background-color: rgb(255 101 101);
+}
+
+.list__btn-delete:hover{
+    background-color:  rgb(236 42 42);
+}
