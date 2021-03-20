@@ -13,7 +13,7 @@ body{
 
 .container{
     margin: 0 auto;
-    width: 800px;
+    max-width: 800px;
 }
 
 .list{
@@ -97,3 +97,21 @@ body{
 .list__btn-delete:hover{
     background-color:  rgb(236 42 42);
 }
+
+
+@media (max-width: 400px) {
+    .container {
+      max-width: auto;
+      padding: 5px;
+    }
+
+    #input{
+        width: 90%;
+    }
+
+    #addItem{
+        width: 15%;
+    }
+
+  }
+  
