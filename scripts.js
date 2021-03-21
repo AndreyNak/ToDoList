@@ -6,7 +6,6 @@ const content = document.getElementById('content');
 
 btn.addEventListener('click', (event) => {
   if(!input.value) {
-    //return input.placeholder = "Сюда надо что-то написать =)";
     return;
   }
   createElement(input.value);
@@ -32,6 +31,7 @@ const createElement = (value) => {
 
     div.addEventListener('dblclick', function() {
       text.style.background = "#c7baba";
+      text.style.textDecoration = "line-through";
       div.style.opacity = 0.5;
     })
     btnDelete.addEventListener('click', (event) => {
