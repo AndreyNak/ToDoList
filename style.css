@@ -1,122 +1,110 @@
-body{
-    background-color:coral;
-    color: white;
-    font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(255, 255, 255);
+  background-color: rgb(255, 127, 80);
 }
 
-
-*,
-*:after {
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-
-.container{
-    margin: 0 auto;
-    max-width: 800px;
+.container {
+  margin: 0 auto;
+  max-width: 800px;
 }
 
-.list{
-    margin-top: 100px;
-    text-align: center;
+.list {
+  margin-top: 100px;
+  text-align: center;
 }
 
-.list__title{
-    font-size: 48px;
+.list__title {
+  font-size: 48px;
 }
 
 .list__top {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-#input{
-    width: 350px;
-    height: 50px;
-    border: none;
-    outline:none;
-    font-size: 30px;
+#input {
+  outline: none;
+  border: none;
+  width: 350px;
+  height: 50px;
+  font-size: 30px;
 }
 
-#addItem{
-    height: 50px;
-    width: 50px;
-    border: none;
-    border-left: 1px solid rgb(225, 229, 233);
-    outline:none;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 0;
-    display: inline;
-    background-color: white;
-    
+#addItem {
+  margin: 0;
+  outline: none;
+  border: none;
+  border-left: 1px solid rgb(225, 229, 233);
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: rgb(255, 255, 255);
 }
 
-#addItem:hover{
-   background-color: whitesmoke;
+#addItem:hover {
+  background-color: rgb(245, 245, 245);
 }
 
-
-#addItem:active{
-    background-color:turquoise;
+#addItem:active {
+  background-color: rgb(64, 224, 208);
 }
 
-#content{
-    margin-top: 60px;
+#content {
+  margin-top: 60px;
 }
 
-.list__item{
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-    
+.list__item {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .list__text {
-    background: white;
-    color: black;
-    width: 500px;
-    height: 50px;
-    padding: 9px 7px;
-    font-size: 30px;
-    text-align: left;
+  padding: 9px 7px;
+  width: 500px;
+  height: 50px;
+  font-size: 30px;
+  text-align: left;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
 }
 
-.list__btn-delete{
-    height: 50px;
-    width: 50px;
-    border: none;
-    
-    outline:none;
-    font-weight: bold;
-    font-size: 30px;
-    margin: 0;
-    background-color: rgb(255 101 101);
+.list__btn-delete {
+  margin: 0;
+  outline: none;
+  border: none;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: rgb(255 101 101);
 }
 
-.list__btn-delete:hover{
-    background-color:  rgb(236 42 42);
+.list__btn-delete:hover {
+  background-color: rgb(236 42 42);
 }
-
 
 @media (max-width: 400px) {
-    .container {
-      max-width: auto;
-      padding: 5px;
-    }
-
-    #input{
-        width: 90%;
-    }
-
-    #addItem{
-        width: 15%;
-    }
-    
-    .list{
-        margin-top: 10px;
-    }
-
-
+  .container {
+    padding: 5px;
+    max-width: auto;
   }
-  
+
+  #input {
+    width: 90%;
+  }
+
+  #addItem {
+    width: 15%;
+  }
+
+  .list {
+    margin-top: 10px;
+  }
+}
