@@ -3,7 +3,7 @@ var input = document.getElementById('input');
 var btn = document.getElementById('addItem');
 var todos;
 
-function LStage(){
+function Lstage(){
   todos =  content.innerHTML;
   localStorage.setItem('todos', todos);
 }
@@ -12,7 +12,7 @@ content.addEventListener('click', function (evenet) {
     if(evenet.target.tagName === "BUTTON") {
        var div = evenet.target.parentNode;
        div.remove();
-       LStage()
+       Lstage()
     }
 }, false);
 
@@ -27,6 +27,7 @@ btn.addEventListener('click', (event) => {
 function newElement(inputValue) {
     var div = document.createElement('div');
     div.className = 'list__item';
+    var inputValue = document.getElementById('input').value;
     var text = document.createElement('div');
     text.textContent = inputValue;
     text.className = 'list__text';
@@ -38,12 +39,12 @@ function newElement(inputValue) {
     btnDelete.className = 'list__btn-delete';
     btnDelete.appendChild(txt);
     div.appendChild(btnDelete);
-    LStage()
+    Lstage()
     div.addEventListener('dblclick', function() {
       text.style.background = "#c7baba";
       text.style.textDecoration = "line-through";
       div.style.opacity = 0.5;
-      toLStageLocal();
+      Lstage();
       
     })
 }
