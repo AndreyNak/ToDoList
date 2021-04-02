@@ -18,7 +18,7 @@ content.addEventListener('click', function (evenet) {
        div.remove();
        Lstage();
     }
-}, false);
+});
 
 btn.addEventListener('click', () => {
    if(!input.value) {
