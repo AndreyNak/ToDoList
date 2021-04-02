@@ -2,7 +2,6 @@ var content = document.getElementById('content');
 var input = document.getElementById('input');
 var btn = document.getElementById('addItem');
 
-
 var modeChange = false;
 
 
@@ -17,69 +16,72 @@ content.addEventListener('click', function (evenet) {
   if(evenet.target.className === "list__text") {
     evenet.target.classList.toggle('checked');
     Lstage();
-  } else if(evenet.target.className === "list__text checked") {
+  } 
+  else if(evenet.target.className === "list__text checked") {
     evenet.target.classList.remove('checked');
     Lstage();
-  } else if(evenet.target.tagName === "BUTTON") {
-       var div = evenet.target.parentNode;
-       div.remove();
-       Lstage();
-    } else if(evenet.target.tagName === "SPAN") {
-      input.focus();
-      var d = evenet.target.parentNode;
-      elem = d.querySelector('.list__text');
-      input.value = elem.innerText;
-      btn.id = 'BtnChange';
-      input.id = "inputChange";
-      modeChange = true;
-      var btnChange = document.getElementById('BtnChange');
-      btnChange.addEventListener('click', () => {
-        if(!input.value) {
-          return;
-        }
+  } 
+  else if(evenet.target.tagName === "BUTTON") {
+    var div = evenet.target.parentNode;
+    div.remove();
+    Lstage();
+  } 
+  else if(evenet.target.tagName === "SPAN") {
+    input.focus();
+
+    var elem = evenet.target.parentNode;
+    elem = elem.querySelector('.list__text');
+    console.log(elem);
+    input.value = elem.innerText;
+
+    btn.id = 'BtnChange';
+    input.id = "inputChange";
+
+    modeChange = true;
+
+    var btnChange = document.getElementById('BtnChange');
+
+    btnChange.addEventListener('click', () => {
+      if(input.value) {
         elem.innerText = input.value;
-        input.value = "";
-        btn.id = 'btn';
-        input.id = "input";
+        console.log(elem);
         Lstage();
         modeChange = false;
         location.reload();
-      })
-     
-    }
+      } 
+    })
+
+}
 });
-
-
-(function() {
-  document.querySelector('#input').addEventListener('keydown', function(e) {
-    if(!modeChange) {
-      if (e.keyCode === 13) {
-        if(!input.value) {
-          return;
-        }
+ 
+input.addEventListener("keyup", function(event) {
+  if(!modeChange){
+    if (event.key === 'Enter') {
+      if(input.value) {
         newElement(input.value);
       }
     }
-
-  });
-})();
- 
+  }
+});
 
 function myEvent() {
-   if(!input.value) {
-     return;
-   }
-   newElement(input.value);
- }
+  if(input.value) {
+    newElement(input.value);
+  }
+}
+ 
 
 
 function newElement(inputValue) {
     var div = document.createElement('div');
     div.className = 'list__item';
+
     var text = document.createElement('div');
     text.textContent = inputValue;
     text.className = 'list__text';
+
     div.appendChild(text);
+
     document.getElementById('content').appendChild(div);
     document.getElementById('input').value = "";
 
@@ -96,6 +98,7 @@ function newElement(inputValue) {
     btnDelete.appendChild(txt);
 
     div.appendChild(btnDelete);
+    
     Lstage();
 }
 
