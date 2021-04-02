@@ -142,4 +142,13 @@ body {
   .list {
     margin-top: 10px;
   }
+  
+  .list__change-input{
+    font-size: 22px;
+    padding: 13px 4px;
+  }
+
+  .list__btn-delete{
+    font-size: 22px;
+  }
 }
