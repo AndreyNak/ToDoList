@@ -28,7 +28,6 @@ content.addEventListener('click', function (evenet) {
       input.focus();
       var d = evenet.target.parentNode;
       elem = d.querySelector('.list__text');
-      console.log(elem);
       input.value = elem.innerText;
       btn.id = 'BtnChange';
       input.id = "inputChange";
@@ -39,7 +38,6 @@ content.addEventListener('click', function (evenet) {
           return;
         }
         elem.innerText = input.value;
-        console.log(elem);
         input.value = "";
         btn.id = 'btn';
         input.id = "input";
