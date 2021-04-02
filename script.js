@@ -25,6 +25,7 @@ content.addEventListener('click', function (evenet) {
        div.remove();
        Lstage();
     } else if(evenet.target.tagName === "SPAN") {
+      input.focus();
       var d = evenet.target.parentNode;
       elem = d.querySelector('.list__text');
       console.log(elem);
