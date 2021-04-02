@@ -13,6 +13,8 @@ content.addEventListener('click', function (evenet) {
   if(evenet.target.className === "list__text") {
     evenet.target.classList.toggle('checked');
     Lstage();
+  } else if(evenet.target.className === "list__text checked") {
+    evenet.target.classList.remove('checked');
   } else if(evenet.target.tagName === "BUTTON") {
        var div = evenet.target.parentNode;
        div.remove();
@@ -20,13 +22,25 @@ content.addEventListener('click', function (evenet) {
     }
 });
 
+
+(function() {
+  document.querySelector('input').addEventListener('keydown', function(e) {
+    if (e.keyCode === 13) {
+      newElement(input.value);
+    }
+  });
+})();
+ 
+
 btn.addEventListener('click', () => {
    if(!input.value) {
      return;
    }
    newElement(input.value);
  })
+
  
+
 
 function newElement(inputValue) {
     var div = document.createElement('div');
