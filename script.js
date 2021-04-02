@@ -9,16 +9,40 @@ function Lstage(){
 }
 
 
+
+
 content.addEventListener('click', function (evenet) {
   if(evenet.target.className === "list__text") {
     evenet.target.classList.toggle('checked');
     Lstage();
   } else if(evenet.target.className === "list__text checked") {
     evenet.target.classList.remove('checked');
+    Lstage();
   } else if(evenet.target.tagName === "BUTTON") {
        var div = evenet.target.parentNode;
        div.remove();
        Lstage();
+    } else if(evenet.target.tagName === "SPAN") {
+      var d = evenet.target.parentNode;
+      elem = d.querySelector('.list__text');
+      console.log(elem);
+      input.value = elem.innerText;
+      btn.id = 'BtnChange';
+      input.id = "inputChange";
+      var btnChange = document.getElementById('BtnChange');
+      btnChange.addEventListener('click', () => {
+        if(!input.value) {
+          return;
+        }
+        elem.innerText = input.value;
+        console.log(elem);
+        input.value = "";
+        btn.id = 'btn';
+        input.id = "input";
+        Lstage();
+        location.reload();
+      })
+     
     }
 });
 
@@ -26,18 +50,21 @@ content.addEventListener('click', function (evenet) {
 (function() {
   document.querySelector('input').addEventListener('keydown', function(e) {
     if (e.keyCode === 13) {
+      if(!input.value) {
+        return;
+      }
       newElement(input.value);
     }
   });
 })();
  
 
-btn.addEventListener('click', () => {
+function myEvent() {
    if(!input.value) {
      return;
    }
    newElement(input.value);
- })
+ }
 
  
 
@@ -51,10 +78,19 @@ function newElement(inputValue) {
     div.appendChild(text);
     document.getElementById('content').appendChild(div);
     document.getElementById('input').value = "";
+
+    var changeInput = document.createElement('SPAN');
+    var txtChangeInput = document.createTextNode('CH');
+    changeInput.className = 'list__change-input';
+    changeInput.appendChild(txtChangeInput);
+
+    div.appendChild(changeInput);
+
     var btnDelete = document.createElement('BUTTON');
     var txt = document.createTextNode("X");
     btnDelete.className = 'list__btn-delete';
     btnDelete.appendChild(txt);
+
     div.appendChild(btnDelete);
     Lstage();
 }
