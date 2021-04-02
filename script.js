@@ -31,7 +31,6 @@ btn.addEventListener('click', () => {
 function newElement(inputValue) {
     var div = document.createElement('div');
     div.className = 'list__item';
-    var inputValue = document.getElementById('input').value;
     var text = document.createElement('div');
     text.textContent = inputValue;
     text.className = 'list__text';
