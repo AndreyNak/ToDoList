@@ -2,13 +2,15 @@ var content = document.getElementById('content');
 var input = document.getElementById('input');
 var btn = document.getElementById('addItem');
 
+
+var modeChange = false;
+
+
 var todos;
 function Lstage(){
   todos =  content.innerHTML;
   localStorage.setItem('todos', todos);
 }
-
-
 
 
 content.addEventListener('click', function (evenet) {
@@ -29,6 +31,7 @@ content.addEventListener('click', function (evenet) {
       input.value = elem.innerText;
       btn.id = 'BtnChange';
       input.id = "inputChange";
+      modeChange = true;
       var btnChange = document.getElementById('BtnChange');
       btnChange.addEventListener('click', () => {
         if(!input.value) {
@@ -40,6 +43,7 @@ content.addEventListener('click', function (evenet) {
         btn.id = 'btn';
         input.id = "input";
         Lstage();
+        modeChange = false;
         location.reload();
       })
      
@@ -48,13 +52,16 @@ content.addEventListener('click', function (evenet) {
 
 
 (function() {
-  document.querySelector('input').addEventListener('keydown', function(e) {
-    if (e.keyCode === 13) {
-      if(!input.value) {
-        return;
+  document.querySelector('#input').addEventListener('keydown', function(e) {
+    if(!modeChange) {
+      if (e.keyCode === 13) {
+        if(!input.value) {
+          return;
+        }
+        newElement(input.value);
       }
-      newElement(input.value);
     }
+
   });
 })();
  
@@ -65,8 +72,6 @@ function myEvent() {
    }
    newElement(input.value);
  }
-
- 
 
 
 function newElement(inputValue) {
