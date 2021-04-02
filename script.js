@@ -1,22 +1,26 @@
 var content = document.getElementById('content');
 var input = document.getElementById('input');
 var btn = document.getElementById('addItem');
-var todos;
 
+var todos;
 function Lstage(){
   todos =  content.innerHTML;
   localStorage.setItem('todos', todos);
 }
 
+
 content.addEventListener('click', function (evenet) {
-    if(evenet.target.tagName === "BUTTON") {
+  if(evenet.target.className === "list__text") {
+    evenet.target.classList.toggle('checked');
+    Lstage();
+  } else if(evenet.target.tagName === "BUTTON") {
        var div = evenet.target.parentNode;
        div.remove();
-       Lstage()
+       Lstage();
     }
 }, false);
 
-btn.addEventListener('click', (event) => {
+btn.addEventListener('click', () => {
    if(!input.value) {
      return;
    }
@@ -39,14 +43,7 @@ function newElement(inputValue) {
     btnDelete.className = 'list__btn-delete';
     btnDelete.appendChild(txt);
     div.appendChild(btnDelete);
-    Lstage()
-    div.addEventListener('dblclick', function() {
-      text.style.background = "#c7baba";
-      text.style.textDecoration = "line-through";
-      div.style.opacity = 0.5;
-      Lstage();
-      
-    })
+    Lstage();
 }
 
 if(localStorage.getItem('todos')) {
