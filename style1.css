@@ -27,7 +27,7 @@ body {
   justify-content: center;
 }
 
-#input {
+.input {
   outline: none;
   border: none;
   width: 350px;
@@ -35,7 +35,7 @@ body {
   font-size: 30px;
 }
 
-#addItem {
+.addItem {
   margin: 0;
   outline: none;
   border: none;
@@ -65,13 +65,9 @@ body {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  transition: 0.5s linear; 
 }
 
-.checked{
-    background: "#c7baba";
-    text-decoration:line-through;
-    opacity: 0.5;
-}
 
 .list__text {
   padding: 9px 7px;
@@ -83,6 +79,36 @@ body {
   background: rgb(255, 255, 255);
 }
 
+.checked{
+  background: #aeb188;
+  text-decoration:line-through;
+  opacity: 0.5;
+  transition: 0.2s linear; 
+}
+
+.list__change-input{
+  margin: 0;
+  outline: none;
+  border: none;
+  padding: 8px 0;
+  width: 50px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: rgb(255, 200, 0);
+  transition: 0.5s linear; 
+}
+
+.list__change-input:hover{
+  background-color: rgb(188, 253, 9);
+  color: rgb(0, 0, 0);
+
+}
+
+#BtnChange{
+  background-color: rgb(255, 200, 0);
+}
+
 .list__btn-delete {
   margin: 0;
   outline: none;
@@ -92,6 +118,7 @@ body {
   font-weight: 700;
   font-size: 30px;
   background-color: rgb(255 101 101);
+  transition: 0.3s linear; 
 }
 
 .list__btn-delete:hover {
@@ -104,11 +131,11 @@ body {
     max-width: auto;
   }
 
-  #input {
+  .input {
     width: 90%;
   }
 
-  #addItem {
+  .addItem {
     width: 15%;
   }
 
